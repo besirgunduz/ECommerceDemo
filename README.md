@@ -2,6 +2,7 @@
 
 ## Kullanılan Teknolojiler
 
+* Angular
 * React
 * Microsoft Sql Server
 * Asp.net Core Web Api
