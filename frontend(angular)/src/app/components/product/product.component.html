@@ -3,11 +3,18 @@
         <th>id</th>
         <th>name</th>
         <th>price</th>
+        <th>createDate</th>
+        <th>status</th>
+        <th>category</th>
+
     </tr>
     <tr *ngFor="let product of products">
         <td>{{product.id}}</td>
         <td>{{product.name}}</td>
         <td>{{product.price}}</td>
+        <td>{{product.createDate}}</td>
+        <td>{{product.status}}</td>
+        <td>{{product.category.name}}</td>
         <td></td>
     </tr>
 </table>
