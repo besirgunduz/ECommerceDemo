@@ -4,7 +4,7 @@
 
 * Angular
 * React
-* Microsoft Sql Server
+* MSSQL
 * Asp.net Core Web Api
 * Code First/Entity Framework Core
 * UnitOfWork Repository Patern
