@@ -9,8 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoryComponent implements OnInit {
 
-  categories: Category[]=[];
-  constructor(private categoryService:CategoryService) { }
+  categories: Category[] = [];
+  currentCategory: Category;
+  currentCategory2: Category;
+  constructor(private categoryService: CategoryService) { }
 
   ngOnInit(): void {
     this.getCategories();
@@ -18,8 +20,33 @@ export class CategoryComponent implements OnInit {
 
   getCategories() {
     this.categoryService.getCategories().subscribe((response) => {
-      this.categories=response.data;
+      this.categories = response.data;
     })
+  }
+
+  setCurrentCategory(category: Category) {
+    this.currentCategory = category;
+  }
+
+  setCurrentCategory2() {
+    this.currentCategory=this.currentCategory2;
+  }
+
+  getCurrentCategoryClass(category: Category) {
+    if (category == this.currentCategory) {
+      return "list-group-item active"
+    } else {
+      return "list-group-item"
+    }
+  }
+
+  getAllCategoryClass() {
+    if (!this.currentCategory) {
+      return "list-group-item active";
+    }
+    else {
+      return "list-group-item";
+    }
   }
 
 }
