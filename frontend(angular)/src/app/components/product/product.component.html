@@ -6,7 +6,8 @@
 
 <div class="mb-3">
     <label for="exampleFormControlInput1" class="form-label">Ürün Ara</label>
-    <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="aranacak ürünü giriniz">
+    <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText"
+        placeholder="aranacak ürünü giriniz">
 </div>
 
 <div *ngIf="filterText" class="alert alert-success">
@@ -24,7 +25,7 @@
         <th>category</th>
 
     </tr>
-    <tr *ngFor="let product of products">
+    <tr *ngFor="let product of products | filterPipe : filterText">
         <td>{{product.id}}</td>
         <td>{{ product.name | lowercase }}</td>
         <td>{{product.price | currency}}</td>
