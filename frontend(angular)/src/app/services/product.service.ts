@@ -1,3 +1,4 @@
+import { ResponseModel } from './../models/responseModel';
 import { Product } from './../models/product';
 import { listResponseModel } from './../models/listResponseModel';
 import { HttpClient } from '@angular/common/http';
@@ -22,4 +23,9 @@ export class ProductService {
     let newPath=this.apiUrl+"Products/GetProductListByCategoryId?categoryId="+categoryId;
     return this.httpClient.get<listResponseModel<Product>>(newPath)
   }
+
+  add(product:Product):Observable<ResponseModel>{
+    return this.httpClient.post<ResponseModel>(this.apiUrl+"Products/Add",product) //hangi adrese ne göndereyim
+  }
+
 }
