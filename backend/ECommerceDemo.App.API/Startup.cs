@@ -1,4 +1,5 @@
 using ECommerceDemo.Business.Engines.Infrastructure;
+using ECommerceDemo.Core.Extension;
 using ECommerceDemo.Core.Infrastructure;
 using ECommerceDemo.Data.DAL;
 using ECommerceDemo.Data.DAL.Security.Encryption;
@@ -91,6 +92,8 @@ namespace ECommerceDemo.App.API
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.ConfigureCustomExceptionMiddleware();
 
             //Cors
             app.UseCors(builder => builder.WithOrigins("http://localhost:4200").AllowAnyHeader());

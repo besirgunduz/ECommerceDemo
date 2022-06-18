@@ -6,6 +6,7 @@ namespace ECommerceDemo.Business.Engines.Models
     {
         public string Name { get; set; }
         public decimal Price { get; set; }
+        public int CategoryId { get; set; }
         public string Picture { get; set; }
         public CategoryModel Category { get; set; }
     }
