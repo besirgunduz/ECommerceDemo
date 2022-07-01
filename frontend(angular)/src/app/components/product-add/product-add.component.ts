@@ -27,6 +27,7 @@ export class ProductAddComponent implements OnInit {
     })
   }
 
+  //TODO
   add() {
     debugger;
     if (this.productAddForm.valid) {
